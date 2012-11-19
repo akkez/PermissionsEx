@@ -87,6 +87,10 @@ public abstract class PermissionsCommand implements CommandListener {
 		if (playerName == null) {
 			return null;
 		}
+		
+		if (playerName.startsWith("@")) {
+			return playerName.replaceFirst("@", "");
+		}
 
 		List<String> players = new LinkedList<String>();
 
